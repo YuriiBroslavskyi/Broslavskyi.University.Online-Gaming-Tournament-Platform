@@ -12,6 +12,8 @@ TBA
 TBA
 
 ## Project Task Decomposition
+TBA
+
 ### Week 1
   - Implement feature: User Registration with Google OAuth 2.0. 🕓	
   - Set up Azure deployment environment. 🕓	
