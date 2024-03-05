@@ -18,6 +18,7 @@
   - jwt-decode
 
 ### Initial architecture diagram
+![alt text](https://github.com/YuriiBroslavskyi/Broslavskyi.University.Online-Gaming-Tournament-Platform/blob/main/Initial-architecture-diagram.jpg "Initial-architecture-diagram image")
 
 ## Project Task Decomposition
 
