@@ -6,8 +6,7 @@
 - https://t.me/Yura_ne_yura
 
 ## Getting Started
-- Make sure you are in Online-Gaming-Tournament-Platform\client folder
-  Next rum "npm start" command and the project will automatically open in your browser on port 3000
+- Make sure you are in Online-Gaming-Tournament-Platform\client folder. Next rum "npm start" command and the project will automatically open in your browser on port 3000
 
 ## Project Documentation
 ### Frontend: React
