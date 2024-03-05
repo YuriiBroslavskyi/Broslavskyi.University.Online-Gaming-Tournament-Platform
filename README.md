@@ -13,11 +13,9 @@
 ### Frontend: React
 ### Backend: _TBA_
 - Library used to connect Google OAuth 2.0:
-  -- @react-oauth/google
+  - @react-oauth/google
 - Library used for decoding userLogin data:
-  -- jwt-decode
-
-
+  - jwt-decode
 
 ## Project Task Decomposition
 
