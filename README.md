@@ -17,6 +17,8 @@
 - Library used for decoding userLogin data:
   - jwt-decode
 
+### Initial architecture diagram
+
 ## Project Task Decomposition
 
 ### Week 1
