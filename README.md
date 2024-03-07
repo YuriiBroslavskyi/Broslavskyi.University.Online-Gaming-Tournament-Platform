@@ -10,11 +10,12 @@
 
 ## Project Documentation
 ### Frontend: React
-### Backend: _TBA_
 - Library used to connect Google OAuth 2.0:
   - @react-oauth/google
 - Library used for decoding userLogin data:
   - jwt-decode
+### Backend: _TBA_
+
 
 ### Initial architecture diagram
 ![alt text](https://github.com/YuriiBroslavskyi/Broslavskyi.University.Online-Gaming-Tournament-Platform/blob/main/Initial-architecture-diagram.jpg "Initial-architecture-diagram image")
