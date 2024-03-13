@@ -28,3 +28,9 @@
   - Create basic project structure on GitHub repository. ✔️	
   - Write getting started documentation for local setup. ✔️	
   - Create initial architecture diagram. ✔️	
+### Week 2:
+  - Implement feature: Tournament Creation functionality. 🕒
+  - Configure continuous integration/continuous delivery pipeline. 🕒
+  - Develop Postman collection for testing endpoints. 🕒
+  - Write documentation for project architecture. 🕒
+  - Define tasks decomposition for ongoing development. 🕒
