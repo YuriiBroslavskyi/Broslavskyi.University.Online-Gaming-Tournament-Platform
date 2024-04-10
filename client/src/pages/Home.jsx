@@ -1,45 +1,33 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const Home = () => {
-    const [user, setUser] = useState(null);
+    const [tournaments, setTournaments] = useState([]);
 
     useEffect(() => {
-        if (user === null)
-            axios
-                .get('http://localhost:3001/auth/account', {
-                    withCredentials: true,
-                })
-                .then((res) => {
-                    if (res?.data) {
-                        setUser(res.data);
-                    }
-                })
-                .catch((e) => {
-                    console.log(e);
-                });
-        else return;
-    }, [user]);
-
-    if (user) {
-        return (
-            <article className='profile'>
-                <img
-                    src={user?.picture}
-                    alt='Unable to load profile photo'
-                    className='profile__picture'
-                />
-                <h2 className='profile__name'>{user.displayName}</h2>
-                <a href={'mailto:' + user.email} className='profile__email'>
-                    {user.email}
-                </a>
-            </article>
-        );
-    }
+        axios.get('http://localhost:3001/tournaments')
+            .then((res) => {
+                setTournaments(res.data);
+            })
+            .catch((error) => {
+                console.error('Error fetching tournaments:', error);
+            });
+    }, []);
 
     return (
         <section>
-            <h2>There are no profile information to display...</h2>
+            <h2>All Tournaments</h2>
+            <div className="tournament-list">
+                {tournaments.map((tournament) => (
+                    <div key={tournament._id} className="tournament">
+                        <h3>{tournament.name}</h3>
+                        <p>Description: {tournament.description}</p>
+                        <p>Start Date: {tournament.startDate}</p>
+                        <p>End Date: {tournament.endDate}</p>
+                        <p>Prize Pool: {tournament.prizePool}</p>
+                    </div>
+                ))}
+            </div>
         </section>
     );
 };

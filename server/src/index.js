@@ -5,10 +5,11 @@ const passport = require('passport');
 const cors = require('cors');
 const { sessionSecret, port, connectionString } = require('../config/config');
 const { authRouter } = require('./routes/auth');
+const tournamentRouter = require('./routes/tournament');
+const leagueJoiningRouter = require('./routes/league');
 
 const app = express();
 
-// * Middleware
 app.use(
     cors({
         origin: 'http://localhost:3000',
@@ -19,19 +20,25 @@ app.use(
 app.use(
     session({ secret: sessionSecret, saveUninitialized: false, resave: false })
 );
-app.use(passport.session());
 app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.json());
 
-// * Routing
 app.use('/auth', authRouter);
+app.use('/tournaments', tournamentRouter);
+app.use('/leagues', leagueJoiningRouter);
 
-const start = () => {
+const start = async () => {
     try {
-        mongoose.connect(connectionString);
-        app.listen(port);
-        console.log('Listening on port ', port);
-    } catch (e) {
-        console.log(e.message);
+        await mongoose.connect(connectionString, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        app.listen(port, () => {
+            console.log('Server is running on port', port);
+        });
+    } catch (error) {
+        console.error('Error starting server:', error);
     }
 };
 
