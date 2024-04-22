@@ -1,38 +1,100 @@
-# Express Google Authentication
-
-Is an example implementation of google authentication with express.js and passport.js
+# #24 - Online Gaming Tournament Platform
 
 ## Author
+Yurii Broslavskyi
+FeP-21
 
-Hulak Mykhailo
+https://t.me/Yura_ne_yura
 
-[Send me an email](miha.gulak@gmail.com)
+broslav25@gmail.com
 
-[Find me on telegram](https://t.me/@midjiro)
+## Description: 
+The Online Gaming Tournament Platform is a web-based application designed to provide gamers with a platform to compete in tournaments, join leagues, and connect with fellow gaming enthusiasts. With features like OAuth 2.0 integration, Azure deployment, and continuous delivery, it offers a seamless experience for gamers to engage in competitive gaming.
 
-## Getting Started
+## Project Architecture Documentation
 
-1.  Create a new project on google cloud platform
-1.  Follow [this](https://youtu.be/TKnnrGU9MFw?si=RUbJ3RjKTFT7n3eR) tutorial to setup a consent screen, grab your credentials
-1.  Create a new cluster at [mongodb](https://www.mongodb.com/) and copy a connection string
-1.  Clone repo with
+**Folder Structure:**
 
-`git clone https://github.com/midjiro/express-google-auth.git`
+1. **Client:**
+   - **Public:** Contains static assets like HTML files, images, and favicon.
+   - **Src:**
+     - **App:** Main application component responsible for rendering routes and managing state.
+     - **Components:** Reusable UI components used throughout the application.
+     - **Context:** Context providers for managing global state using React Context API.
+     - **Css:** Stylesheets for styling components and pages.
+     - **Pages:** React components representing different pages of the application.
 
-1.  Create a default.json file inside of server/config folder with the following code
+2. **Server:**
+   - **Config:** Configuration files for the server, such as environment variables and database configurations.
+   - **Src:**
+     - **Controllers:** Handlers for processing incoming requests and generating responses.
+     - **Models:** Database schema definitions using Mongoose.
+     - **Routes:** Express.js route definitions for handling API endpoints.
+     - **Utils:** Utility functions used across the server-side codebase.
 
-```
-    {
-        "CLIENT_ID": "...",
-        "CLIENT_SECRET": "...",
-        "SESSION_SECRET": "...",
-        "CONNECTION_STRING": "...",
-        "PORT": 3001
-    }
-```
+**Backend Architecture:**
+- The server-side architecture is based on the Express.js framework, providing a robust and flexible foundation for building web applications.
+- Routes defined in the `routes` directory handle incoming HTTP requests and delegate processing to appropriate controller functions.
+- Controller functions interact with database models defined in the `models` directory to perform CRUD operations and business logic.
+- Middleware functions can be utilized for tasks such as request validation, authentication, and error handling.
 
-1.  Replace dots by copied data,your session secret key and mongodb connection string.
+**Frontend Architecture:**
+- The frontend is built using React.js, a popular JavaScript library for building user interfaces.
+- Components in the `components` directory encapsulate UI elements and can be reused across different pages.
+- Context providers defined in the `context` directory manage global state, enabling communication between components.
+- CSS stylesheets in the `css` directory provide styling for components and pages, following modular and responsive design principles.
 
-1.  Run `npm install` both in client and server directories
+**Authentication:**
+- Authentication is implemented using Passport.js middleware, providing authentication strategies for various providers (OAuth).
+- User authentication state is managed using JSON Web Tokens (JWT) stored in local storage.
 
-1.  Now you are ready to run the project. Happy hacking!
+**Database Schema:**
+- Database schema definitions are created using Mongoose, an Object Data Modeling (ODM) library for MongoDB.
+- Schemas defined in the `models` directory represent different data entities and define their structure, validation rules, and relationships.
+
+**Deployment:**
+- Deployment configuration and environment variables are stored in the `config` directory, facilitating seamless deployment to various hosting platforms.
+
+## Development Plan on a Weekly Basis
+
+- ### Week 1:
+  - Implement feature: User Registration with Google OAuth 2.0.✅
+  - Set up Azure deployment environment.✅
+  - Create basic project structure on GitHub repository.✅
+  - Write getting started documentation for local setup.✅
+  - Create initial architecture diagram.✅
+
+- ### Week 2:
+  - Implement feature: Tournament Creation functionality.✅
+  - Configure continuous integration/continuous delivery pipeline.✅
+  - Develop Postman collection for testing endpoints.
+  - Write documentation for project architecture.✅
+  - Define tasks decomposition for ongoing development.✅
+
+- ### Week 3:
+  - Implement feature: League Joining capability.✅
+  - Set up unit tests for key services.
+  - Refine documentation based on feedback.✅
+  - Conduct initial testing of deployed application.✅
+  - Plan for next sprint based on project tasks decomposition.✅
+
+- ### Week 4:
+  - Implement feature: Profile Management for users.
+  - Fine-tune Azure deployment settings.
+  - Enhance unit test coverage for improved reliability.
+  - Review and update project tasks decomposition.✅
+  - Prepare for upcoming feature implementations.✅
+
+- ### Week 5:
+  - Implement feature: Matchmaking algorithm.
+  - Optimize Azure deployment for scalability.
+  - Perform code review and address any issues.✅
+  - Update documentation with latest changes.✅
+  - Test matchmaking functionality thoroughly.
+
+- ### Week 6:
+  - Implement feature: Live Chat integration.
+  - Monitor Azure deployment for performance.
+  - Conduct load testing on live chat system.
+  - Update documentation with live chat setup instructions.
+  - Plan for upcoming feature enhancements.✅
