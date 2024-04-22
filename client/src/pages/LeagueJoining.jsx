@@ -10,19 +10,17 @@ export const LeagueJoining = () => {
 
     const handleJoinLeague = async () => {
         try {
-
             await axios.post('http://localhost:3001/leagues/join', { league: selectedLeague }, { withCredentials: true });
             console.log(`Joined ${selectedLeague} league successfully!`);
-
         } catch (error) {
             console.error('Error joining league:', error);
         }
     };
 
     return (
-        <div>
+        <div className="league-container">
             <h1>League Joining</h1>
-            <select value={selectedLeague} onChange={handleLeagueChange}>
+            <select className="select-league" value={selectedLeague} onChange={handleLeagueChange}>
                 <option value="">Select a league</option>
                 <option value="bronze">Bronze</option>
                 <option value="silver">Silver</option>
@@ -30,7 +28,7 @@ export const LeagueJoining = () => {
                 <option value="emerald">Emerald</option>
                 <option value="diamond">Diamond</option>
             </select>
-            <button onClick={handleJoinLeague}>Join League</button>
+            <button className="join-button" onClick={handleJoinLeague}>Join League</button>
         </div>
     );
 };

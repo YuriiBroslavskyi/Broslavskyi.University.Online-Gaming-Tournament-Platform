@@ -1,0 +1,23 @@
+const Event = require('../models/event');
+
+exports.createEvent = async (req, res) => {
+    try {
+        const { eventType, userId, eventName, leagueName } = req.body;
+        const event = new Event({ eventType, userId, eventName, leagueName });
+        await event.save();
+        res.status(201).json({ message: 'Event created successfully' });
+    } catch (error) {
+        console.error('Error creating event:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+exports.getLatestEvents = async (req, res) => {
+    try {
+        const events = await Event.find().sort({ timestamp: -1 }).limit(10); // Fetch latest 10 events
+        res.json(events);
+    } catch (error) {
+        console.error('Error fetching events:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};

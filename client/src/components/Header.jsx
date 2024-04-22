@@ -1,9 +1,11 @@
+// Header.js
+
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { userContext } from '../context/userContext';
 import axios from 'axios';
 
-export const Header = ({logout}) => {
+export const Header = ({ logout }) => {
     const user = useContext(userContext);
 
     return (
@@ -23,11 +25,14 @@ export const Header = ({logout}) => {
                 {
                     user ?
                         <>
+                        
                             <button
+                                className='navbar__button' // Apply the same class to the button
                                 onClick={logout}
                             >
-                            Logout
+                                Logout
                             </button>
+
                             <NavLink
                                 to='/create-tournament'
                                 className={({ isActive }) =>
@@ -38,6 +43,7 @@ export const Header = ({logout}) => {
                             >
                                 Create Tournament
                             </NavLink>
+
                             <NavLink
                                 to='/profile'
                                 className={({ isActive }) =>
@@ -47,6 +53,28 @@ export const Header = ({logout}) => {
                                 }
                             >
                                 Profile
+                            </NavLink>
+
+                            <NavLink
+                                to='/latest-events'
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'navbar__link navbar__link--active'
+                                        : 'navbar__link'
+                                }
+                            >
+                                Latest Events
+                            </NavLink>
+
+                            <NavLink
+                                to='/league-joining'
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'navbar__link navbar__link--active'
+                                        : 'navbar__link'
+                                }
+                            >
+                                League Joining
                             </NavLink>
                         </> :
                         <NavLink
@@ -62,16 +90,6 @@ export const Header = ({logout}) => {
                 }
 
 
-                <NavLink
-                    to='/league-joining'
-                    className={({ isActive }) =>
-                        isActive
-                            ? 'navbar__link navbar__link--active'
-                            : 'navbar__link'
-                    }
-                >
-                    League Joining
-                </NavLink>
             </nav>
         </header>
     );
