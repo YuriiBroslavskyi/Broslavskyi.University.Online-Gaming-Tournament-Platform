@@ -28,7 +28,7 @@ app.use(express.json());
 app.use('/auth', authRouter);
 app.use('/tournaments', tournamentRouter);
 app.use('/leagues', leagueJoiningRouter);
-app.use('/latest-events', eventRouter);
+app.use('/events', eventRouter);
 
 const start = async () => {
     try {

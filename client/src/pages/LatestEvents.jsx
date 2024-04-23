@@ -19,9 +19,18 @@ export const LatestEvents = () => {
             <h1>Latest Events</h1>
             <ul>
                 {latestEvents.map(event => (
+                 
                     <li key={event._id}>
                         {event.eventType === 'tournament creation' && (
-                            <p>{`Tournament "${event.eventName}" has been created by User`}</p>
+                            <>
+                            <p>{`Tournament "${event.eventName}" has been created by`}</p>
+                            <div>
+                                <img src={event.userId?.picture} alt="user photo" />
+                                <p>
+                                    {event.userId.displayName}
+                                </p>
+                            </div>
+                            </>
                         )}
                         {event.eventType === 'league change' && (
                             <p>{`User changed its league to "${event.leagueName}"`}</p>

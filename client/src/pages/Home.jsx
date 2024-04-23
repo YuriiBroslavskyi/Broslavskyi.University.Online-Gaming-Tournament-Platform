@@ -22,8 +22,8 @@ export const Home = () => {
                     <div key={tournament._id} className="tournament">
                         <h3>{tournament.name}</h3>
                         <p>Description: {tournament.description}</p>
-                        <p>Start Date: {tournament.startDate}</p>
-                        <p>End Date: {tournament.endDate}</p>
+                        <p>Start Date: {new Date(tournament.startDate).toLocaleDateString('en-GB')}</p>
+                        <p>End Date: {new Date(tournament.endDate).toLocaleDateString('en-GB')}</p>
                         <p>Prize Pool: {tournament.prizePool}</p>
                     </div>
                 ))}

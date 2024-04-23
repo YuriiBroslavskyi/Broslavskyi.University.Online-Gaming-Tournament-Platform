@@ -27,7 +27,7 @@ exports.createTournament = async (req, res) => {
         
         const savedTournament = await newTournament.save();
 
-        res.status(201).json(savedTournament);
+        res.json(savedTournament);
     } catch (error) {
         console.error('Error creating tournament:', error);
         res.status(500).json({ message: 'Internal server error' });
