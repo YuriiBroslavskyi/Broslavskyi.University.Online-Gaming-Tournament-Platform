@@ -7,6 +7,7 @@ const { sessionSecret, port, connectionString } = require('../config/config');
 const { authRouter } = require('./routes/auth');
 const tournamentRouter = require('./routes/tournament');
 const leagueJoiningRouter = require('./routes/league');
+const eventRouter = require('./routes/eventRouter');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(express.json());
 app.use('/auth', authRouter);
 app.use('/tournaments', tournamentRouter);
 app.use('/leagues', leagueJoiningRouter);
+app.use('/latest-events', eventRouter);
 
 const start = async () => {
     try {

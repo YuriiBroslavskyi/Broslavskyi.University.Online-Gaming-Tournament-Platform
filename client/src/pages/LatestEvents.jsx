@@ -5,7 +5,7 @@ export const LatestEvents = () => {
     const [latestEvents, setLatestEvents] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/events/latest')
+        axios.get('http://localhost:3001/events/latest')
             .then(res => {
                 setLatestEvents(res.data);
             })
