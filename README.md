@@ -55,6 +55,8 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
 **Deployment:**
 - Deployment configuration and environment variables are stored in the `config` directory, facilitating seamless deployment to various hosting platforms.
 
+**Notification System** 
+- After creating tournament or changing any league, all users will be informed about its creation in latest event tab.
 ## Development Plan on a Weekly Basis
 
 - ### Week 1:
@@ -98,3 +100,17 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
   - Conduct load testing on live chat system.
   - Update documentation with live chat setup instructions.
   - Plan for upcoming feature enhancements.✅
+  - 
+- ### Week 7:
+  - Implement feature: Leaderboards display.
+  - Fine-tune Azure security settings.
+  - Perform security audit on the platform.
+  - Update documentation with security measures.
+  - Test leaderboard functionality across different scenarios.
+
+- ### Week 8:
+  - Implement feature: Notification System.✅
+  - Monitor and optimize Azure costs.
+  - Conduct user acceptance testing (UAT) on notification features.✅
+  - Update documentation with notification setup guide.✅
+  - Plan for further user engagement features.✅
