@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const LeagueJoining = () => {
     const [selectedLeague, setSelectedLeague] = useState('');
@@ -10,8 +11,17 @@ export const LeagueJoining = () => {
 
     const handleJoinLeague = async () => {
         try {
+            // Join the league
             await axios.post('http://localhost:3001/leagues/join', { league: selectedLeague }, { withCredentials: true });
             console.log(`Joined ${selectedLeague} league successfully!`);
+
+            // Create the event
+            await axios.post('http://localhost:3001/events/', {
+                eventType: 'league change',
+                leagueName: selectedLeague,
+            }, { withCredentials: true });
+            console.log(`League change event created for ${selectedLeague} league!`);
+            toast(`You successfully joined ${selectedLeague} league`);
         } catch (error) {
             console.error('Error joining league:', error);
         }

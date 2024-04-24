@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const CreateTournament = () => {
     const [tournamentData, setTournamentData] = useState({
@@ -19,13 +20,21 @@ export const CreateTournament = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/tournaments/', tournamentData, { withCredentials: true });
-            console.log('Tournament created:', response.data);
+            // Create the tournament
+            const tournamentResponse = await axios.post('http://localhost:3001/tournaments/', tournamentData, { withCredentials: true });
+            console.log('Tournament created:', tournamentResponse.data);
+
+            // Create the event
+            const eventResponse = await axios.post('http://localhost:3001/events/', {
+                eventType: 'tournament creation',
+                eventName: tournamentResponse.data.name, // Use the name of the created tournament
+                // Add other event data as needed
+            }, { withCredentials: true });
+            toast(`${tournamentResponse.data.name} has been created`);
         } catch (error) {
             console.error('Error creating tournament:', error);
         }
     };
-
     return (
         <div className="form-container">
             <h1>Create Tournament</h1>

@@ -113,7 +113,7 @@ a {
     gap: 20px;
   }
   
-  .tournament {
+  .tournament, .event-item {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
@@ -206,3 +206,28 @@ a {
   .join-button:hover {
     background-color: #0056b3;
   }
+
+  .latest-events-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.event-item {
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+}

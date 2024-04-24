@@ -6,5 +6,4 @@ module.exports = {
     sessionSecret: config.get('SESSION_SECRET'),
     port: config.get('PORT'),
     connectionString: config.get('CONNECTION_STRING'),
-    sendGridApiKey: config.get('SENDGRID_API_KEY'),
 };

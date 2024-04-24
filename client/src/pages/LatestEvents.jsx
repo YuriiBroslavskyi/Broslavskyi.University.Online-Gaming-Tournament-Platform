@@ -17,23 +17,29 @@ export const LatestEvents = () => {
     return (
         <div>
             <h1>Latest Events</h1>
-            <ul>
+            <ul className="latest-events-list">
                 {latestEvents.map(event => (
-                 
-                    <li key={event._id}>
+                    <li key={event._id} className="event-item">
                         {event.eventType === 'tournament creation' && (
                             <>
-                            <p>{`Tournament "${event.eventName}" has been created by`}</p>
-                            <div>
-                                <img src={event.userId?.picture} alt="user photo" />
-                                <p>
-                                    {event.userId.displayName}
-                                </p>
-                            </div>
+                                <p>{`Tournament "${event.eventName}" has been created by`}</p>
+                                <div className="user-info">
+                                    <img src={event.userId?.picture} alt="user photo" className="user-avatar" />
+                                    <p className="user-name">
+                                        {event.userId.displayName}
+                                    </p>
+                                </div>
+                                <p>{`On ${new Date(event.timestamp).toLocaleString('en-GB')}`}</p>
                             </>
                         )}
                         {event.eventType === 'league change' && (
-                            <p>{`User changed its league to "${event.leagueName}"`}</p>
+                            <>                      
+                            <div className="user-info">
+                                <img src={event.userId?.picture} alt="user photo" className="user-avatar" />
+                                <p>{`${event.userId.displayName} changed its league to ${event.leagueName}`}</p>
+                            </div>
+                            <p>{`On ${new Date(event.timestamp).toLocaleString('en-GB')}`}</p>
+                            </>
                         )}
                     </li>
                 ))}
