@@ -87,6 +87,17 @@ export const Header = ({ logout }) => {
                             >
                                 Feedback
                             </NavLink>
+
+                            <NavLink
+                                to='/about'
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'navbar__link navbar__link--active'
+                                        : 'navbar__link'
+                                }
+                            >
+                                About
+                            </NavLink>
                         </> :
                         <NavLink
                             to='/login'
@@ -98,6 +109,8 @@ export const Header = ({ logout }) => {
                         >
                             Login
                         </NavLink>
+
+
                 }
 
 
