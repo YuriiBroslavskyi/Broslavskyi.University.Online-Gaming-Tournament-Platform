@@ -57,6 +57,10 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
 
 **Notification System** 
 - After creating tournament or changing any league, all users will be informed about its creation in latest event tab.
+
+**Feedback Mechanism**
+- Users can provide feedback on tournaments, leagues, and overall platform experience to help improve future events. For better filtering of feedbacks, users can select a topic(e.g league issue, tournament issue etc.).
+
 ## Development Plan on a Weekly Basis
 
 - ### Week 1:
@@ -114,3 +118,10 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
   - Conduct user acceptance testing (UAT) on notification features.✅
   - Update documentation with notification setup guide.✅
   - Plan for further user engagement features.✅
+    
+- ### Week 11:
+  - Implement feature: Feedback Mechanism for users.✅
+  - Perform final round of testing on feedback mechanism.✅
+  - Update documentation with feedback mechanism details.✅
+  - Prepare for project deployment.✅
+  - Ensure all tasks are completed for successful deployment.✅
