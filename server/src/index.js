@@ -8,6 +8,7 @@ const { authRouter } = require('./routes/auth');
 const tournamentRouter = require('./routes/tournament');
 const leagueJoiningRouter = require('./routes/league');
 const eventRouter = require('./routes/eventRouter');
+const feedbackRouter = require('./routes/feedback')
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use('/auth', authRouter);
 app.use('/tournaments', tournamentRouter);
 app.use('/leagues', leagueJoiningRouter);
 app.use('/events', eventRouter);
+app.use('/feedbacks', feedbackRouter);
 
 const start = async () => {
     try {

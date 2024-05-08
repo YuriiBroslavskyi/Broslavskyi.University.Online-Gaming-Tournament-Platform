@@ -25,7 +25,7 @@ export const Header = ({ logout }) => {
                 {
                     user ?
                         <>
-                        
+
                             <button
                                 className='navbar__button' // Apply the same class to the button
                                 onClick={logout}
@@ -75,6 +75,17 @@ export const Header = ({ logout }) => {
                                 }
                             >
                                 League Joining
+                            </NavLink>
+
+                            <NavLink
+                                to='/feedback'
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'navbar__link navbar__link--active'
+                                        : 'navbar__link'
+                                }
+                            >
+                                Feedback
                             </NavLink>
                         </> :
                         <NavLink
