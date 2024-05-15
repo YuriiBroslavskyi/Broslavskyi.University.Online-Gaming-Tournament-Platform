@@ -123,12 +123,12 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
   - Update documentation with notification setup guide.✅
   - Plan for further user engagement features.✅
 
- - ###  Week 10:
-  - Implement feature: Prize Distribution management.✅
-  - Review and update Azure deployment architecture.
-  - Perform regression testing on prize distribution functionality.✅
-  - Update documentation with prize distribution instructions.✅
-  - Plan for future platform enhancements.✅
+- ###  Week 10:
+ - Implement feature: Prize Distribution management.✅
+ - Review and update Azure deployment architecture.
+ - Perform regression testing on prize distribution functionality.✅
+ - Update documentation with prize distribution instructions.✅
+ - Plan for future platform enhancements.✅
 
 - ### Week 11:
   - Implement feature: Feedback Mechanism for users.✅
