@@ -9,6 +9,7 @@ import { LeagueJoining } from './pages/LeagueJoining';
 import { LatestEvents } from './pages/LatestEvents';
 import { CreateFeedback } from './pages/Feedback';
 import AboutPage from './pages/About';
+import EndTournament from './pages/endTournament';
 
 export const Router = () => {
     return (
@@ -23,6 +24,7 @@ export const Router = () => {
                     <Route path='latest-events/' element={<LatestEvents />} />
                     <Route path='feedback/' element={<CreateFeedback />} />
                     <Route path='about/' element={<AboutPage />} />
+                    <Route path='tournaments/:tournamentId/end' element={<EndTournament />} />
                 </Route>
             </Routes>
         </BrowserRouter>

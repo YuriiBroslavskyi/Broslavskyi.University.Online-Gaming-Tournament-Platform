@@ -61,6 +61,10 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
 **Feedback Mechanism**
 - Users can provide feedback on tournaments, leagues, and overall platform experience to help improve future events. For better filtering of feedbacks, users can select a topic(e.g league issue, tournament issue etc.).
 
+**Prize Distribution**
+- Users can manage the distribution of prizes for tournament winners through the platform.
+
+
 ## Development Plan on a Weekly Basis
 
 - ### Week 1:
@@ -118,7 +122,14 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
   - Conduct user acceptance testing (UAT) on notification features.✅
   - Update documentation with notification setup guide.✅
   - Plan for further user engagement features.✅
-    
+
+ - ###  Week 10:
+  - Implement feature: Prize Distribution management.✅
+  - Review and update Azure deployment architecture.
+  - Perform regression testing on prize distribution functionality.✅
+  - Update documentation with prize distribution instructions.✅
+  - Plan for future platform enhancements.✅
+
 - ### Week 11:
   - Implement feature: Feedback Mechanism for users.✅
   - Perform final round of testing on feedback mechanism.✅

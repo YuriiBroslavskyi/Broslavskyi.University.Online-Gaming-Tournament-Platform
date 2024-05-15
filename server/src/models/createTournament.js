@@ -7,7 +7,8 @@ const TournamentSchema = new Schema({
     startDate: { type: Date, required: true },
     endDate: { type: Date, required: true },
     prizePool: { type: Number, required: true },
-    createdBy: { type: String, required: true }, 
+    createdBy: { type: String, required: true },
+    isActive: { type: Boolean, default: true }
 });
 
 TournamentSchema.statics.createOrUpdate = async function (id, data) {
