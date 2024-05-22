@@ -10,7 +10,7 @@ broslav25@gmail.com
 
 ## Description: 
 
-client-online-gaming-tournament-platform.vercel.app
+Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link to view my website
 
 The Online Gaming Tournament Platform is a web-based application designed to provide gamers with a platform to compete in tournaments, join leagues, and connect with fellow gaming enthusiasts. With features like OAuth 2.0 integration, Azure deployment, and continuous delivery, it offers a seamless experience for gamers to engage in competitive gaming.
 
