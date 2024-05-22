@@ -9,6 +9,9 @@ https://t.me/Yura_ne_yura
 broslav25@gmail.com
 
 ## Description: 
+
+client-online-gaming-tournament-platform.vercel.app
+
 The Online Gaming Tournament Platform is a web-based application designed to provide gamers with a platform to compete in tournaments, join leagues, and connect with fellow gaming enthusiasts. With features like OAuth 2.0 integration, Azure deployment, and continuous delivery, it offers a seamless experience for gamers to engage in competitive gaming.
 
 ## Project Architecture Documentation
@@ -136,3 +139,10 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
   - Update documentation with feedback mechanism details.✅
   - Prepare for project deployment.✅
   - Ensure all tasks are completed for successful deployment.✅
+
+- ### Week 12:
+  - Finalize deployment to Azure.✅
+  - Perform comprehensive system testing.✅
+  - Prepare for platform launch.✅
+  - Update documentation for final release.✅
+  - Monitor platform post-launch for any issues and feedback.✅
