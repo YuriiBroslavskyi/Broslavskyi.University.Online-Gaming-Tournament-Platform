@@ -175,3 +175,7 @@ Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link 
   - Boyko Dmytro
   - [Link to Boyko Dmytro project](https://github.com/BoykoDmytr/Boyko.University.FeP-1)
   - [Link to Boyko Dmtro Pull Request](https://github.com/BoykoDmytr/Broslavskyi.University.Online-Gaming-Tournament-Platform/pull/1/files)
+
+  - Ryzhanovskyi Mykhailo
+  - [Link to Ryzhanovskyi Mykhailo project](https://github.com/muchailouzivert/Ryzhanovskyi.University.Tinder)
+  - [Link to Ryzhanovskyi Mykhailo Pull Request](https://github.com/muchailouzivert/Broslavskyi.University.Online-Gaming-Tournament-Platform/pull/1)
