@@ -7,11 +7,7 @@ const UserSchema = new Schema({
     displayName: { type: String, required: true },
     email: { type: String, required: true },
     picture: { type: String, required: true },
-    provider: { type: String, required: true },
     password: { type: String, required: false },
-    league: { type: String, default: null },
-    isJoinedToTournament: { type: Boolean, default: false },
-    tournamentJoined: { type: String, default: null }
 });
 
 UserSchema.statics.findOrCreate = async function (id, doc) {
@@ -25,10 +21,6 @@ UserSchema.statics.findOrCreate = async function (id, doc) {
         email: doc.email,
         picture: doc.picture,
         password: doc?.password,
-        provider: doc.provider,
-        league: null,
-        isJoinedToTournament: false,
-        tournamentJoined: null,
     });
 
     return newUser;
