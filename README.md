@@ -10,9 +10,32 @@ broslav25@gmail.com
 
 ## Description: 
 
-Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link to view my website
+### Installation
+ - Create a new project on google cloud platform
+ - Follow this tutorial to setup a consent screen, grab your credentials
+ - Create a new cluster at mongodb and copy a connection string
+ - Clone repo with
+ - git clone https://github.com/YuriiBroslavskyi/Broslavskyi.University.Online-Gaming-Tournament-Platform
+
+- Create a default.json file inside of server/config folder with the following code
+```
+    {
+        "CLIENT_ID": "...",
+        "CLIENT_SECRET": "...",
+        "SESSION_SECRET": "...",
+        "CONNECTION_STRING": "...",
+        "PORT": 3001
+    }
+```
+
+- Replace dots by copied data,your session secret key and mongodb connection string.
+
+- Run npm install both in client and server directories
+
 
 The Online Gaming Tournament Platform is a web-based application designed to provide gamers with a platform to compete in tournaments, join leagues, and connect with fellow gaming enthusiasts. With features like OAuth 2.0 integration, Azure deployment, and continuous delivery, it offers a seamless experience for gamers to engage in competitive gaming.
+
+Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link to view my website
 
 ## Project Architecture Documentation
 
