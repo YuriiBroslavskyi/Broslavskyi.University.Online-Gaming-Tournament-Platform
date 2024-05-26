@@ -26,4 +26,15 @@ router.get('/account', isLoggedIn, (req, res) => {
     return res.send(req.user);
 });
 
+router.get('/logout', isLoggedIn, (req, res) => {
+    req.logout((error) => {
+        if (error) {
+            console.error(error);
+            return res.status(500).json(error);
+        }
+        return res.sendStatus(200);
+
+    })
+});
+
 module.exports = { authRouter: router };

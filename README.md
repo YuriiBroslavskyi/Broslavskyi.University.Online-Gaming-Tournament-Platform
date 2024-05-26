@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+# #24 - Online Gaming Tournament Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Author
+Yurii Broslavskyi
+FeP-21
 
-## Available Scripts
+https://t.me/Yura_ne_yura
 
-In the project directory, you can run:
+broslav25@gmail.com
 
-### `npm start`
+## Description: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+ - Create a new project on google cloud platform
+ - Follow this tutorial to setup a consent screen, grab your credentials
+ - Create a new cluster at mongodb and copy a connection string
+ - Clone repo with
+ - git clone https://github.com/YuriiBroslavskyi/Broslavskyi.University.Online-Gaming-Tournament-Platform
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Create a default.json file inside of server/config folder with the following code
+```
+    {
+        "CLIENT_ID": "...",
+        "CLIENT_SECRET": "...",
+        "SESSION_SECRET": "...",
+        "CONNECTION_STRING": "...",
+        "PORT": 3001
+    }
+```
 
-### `npm test`
+- Replace dots by copied data,your session secret key and mongodb connection string.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Run npm install both in client and server directories
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Online Gaming Tournament Platform is a web-based application designed to provide gamers with a platform to compete in tournaments, join leagues, and connect with fellow gaming enthusiasts. With features like OAuth 2.0 integration, Azure deployment, and continuous delivery, it offers a seamless experience for gamers to engage in competitive gaming.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link to view my website
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Architecture Documentation
 
-### `npm run eject`
+**Folder Structure:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Client:**
+   - **Public:** Contains static assets like HTML files, images, and favicon.
+   - **Src:**
+     - **App:** Main application component responsible for rendering routes and managing state.
+     - **Components:** Reusable UI components used throughout the application.
+     - **Context:** Context providers for managing global state using React Context API.
+     - **Css:** Stylesheets for styling components and pages.
+     - **Pages:** React components representing different pages of the application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Server:**
+   - **Config:** Configuration files for the server, such as environment variables and database configurations.
+   - **Src:**
+     - **Controllers:** Handlers for processing incoming requests and generating responses.
+     - **Models:** Database schema definitions using Mongoose.
+     - **Routes:** Express.js route definitions for handling API endpoints.
+     - **Utils:** Utility functions used across the server-side codebase.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Backend Architecture:**
+- The server-side architecture is based on the Express.js framework, providing a robust and flexible foundation for building web applications.
+- Routes defined in the `routes` directory handle incoming HTTP requests and delegate processing to appropriate controller functions.
+- Controller functions interact with database models defined in the `models` directory to perform CRUD operations and business logic.
+- Middleware functions can be utilized for tasks such as request validation, authentication, and error handling.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Frontend Architecture:**
+- The frontend is built using React.js, a popular JavaScript library for building user interfaces.
+- Components in the `components` directory encapsulate UI elements and can be reused across different pages.
+- Context providers defined in the `context` directory manage global state, enabling communication between components.
+- CSS stylesheets in the `css` directory provide styling for components and pages, following modular and responsive design principles.
 
-## Learn More
+**Authentication:**
+- Authentication is implemented using Passport.js middleware, providing authentication strategies for various providers (OAuth).
+- User authentication state is managed using JSON Web Tokens (JWT) stored in local storage.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Database Schema:**
+- Database schema definitions are created using Mongoose, an Object Data Modeling (ODM) library for MongoDB.
+- Schemas defined in the `models` directory represent different data entities and define their structure, validation rules, and relationships.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Deployment:**
+- Deployment configuration and environment variables are stored in the `config` directory, facilitating seamless deployment to various hosting platforms.
 
-### Code Splitting
+**Notification System** 
+- After creating tournament or changing any league, all users will be informed about its creation in latest event tab.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Feedback Mechanism**
+- Users can provide feedback on tournaments, leagues, and overall platform experience to help improve future events. For better filtering of feedbacks, users can select a topic(e.g league issue, tournament issue etc.).
 
-### Analyzing the Bundle Size
+**Prize Distribution**
+- Users can manage the distribution of prizes for tournament winners through the platform.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Development Plan on a Weekly Basis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ### Week 1:
+  - Implement feature: User Registration with Google OAuth 2.0.✅
+  - Set up Azure deployment environment.✅
+  - Create basic project structure on GitHub repository.✅
+  - Write getting started documentation for local setup.✅
+  - Create initial architecture diagram.✅
 
-### Advanced Configuration
+- ### Week 2:
+  - Implement feature: Tournament Creation functionality.✅
+  - Configure continuous integration/continuous delivery pipeline.✅
+  - Develop Postman collection for testing endpoints.
+  - Write documentation for project architecture.✅
+  - Define tasks decomposition for ongoing development.✅
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- ### Week 3:
+  - Implement feature: League Joining capability.✅
+  - Set up unit tests for key services.
+  - Refine documentation based on feedback.✅
+  - Conduct initial testing of deployed application.✅
+  - Plan for next sprint based on project tasks decomposition.✅
 
-### Deployment
+- ### Week 4:
+  - Implement feature: Profile Management for users.
+  - Fine-tune Azure deployment settings.
+  - Enhance unit test coverage for improved reliability.
+  - Review and update project tasks decomposition.✅
+  - Prepare for upcoming feature implementations.✅
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- ### Week 5:
+  - Implement feature: Matchmaking algorithm.
+  - Optimize Azure deployment for scalability.
+  - Perform code review and address any issues.✅
+  - Update documentation with latest changes.✅
+  - Test matchmaking functionality thoroughly.
 
-### `npm run build` fails to minify
+- ### Week 6:
+  - Implement feature: Live Chat integration.
+  - Monitor Azure deployment for performance.
+  - Conduct load testing on live chat system.
+  - Update documentation with live chat setup instructions.
+  - Plan for upcoming feature enhancements.✅
+  - 
+- ### Week 7:
+  - Implement feature: Leaderboards display.
+  - Fine-tune Azure security settings.
+  - Perform security audit on the platform.
+  - Update documentation with security measures.
+  - Test leaderboard functionality across different scenarios.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- ### Week 8:
+  - Implement feature: Notification System.✅
+  - Monitor and optimize Azure costs.
+  - Conduct user acceptance testing (UAT) on notification features.✅
+  - Update documentation with notification setup guide.✅
+  - Plan for further user engagement features.✅
+
+- ###  Week 10:
+  - Implement feature: Prize Distribution management.✅
+  - Review and update Azure deployment architecture.
+  - Perform regression testing on prize distribution functionality.✅
+  - Update documentation with prize distribution instructions.✅
+  - Plan for future platform enhancements.✅
+
+- ### Week 11:
+  - Implement feature: Feedback Mechanism for users.✅
+  - Perform final round of testing on feedback mechanism.✅
+  - Update documentation with feedback mechanism details.✅
+  - Prepare for project deployment.✅
+  - Ensure all tasks are completed for successful deployment.✅
+
+- ### Week 12:
+  - Finalize deployment to Azure.✅
+  - Perform comprehensive system testing.✅
+  - Prepare for platform launch.✅
+  - Update documentation for final release.✅
+  - Monitor platform post-launch for any issues and feedback.✅
+
+
+## Antilab #2
+  - Boyko Dmytro
+  - [Link to Boyko Dmytro project](https://github.com/BoykoDmytr/Boyko.University.FeP-1)
+  - [Link to Boyko Dmtro Pull Request](https://github.com/BoykoDmytr/Broslavskyi.University.Online-Gaming-Tournament-Platform/pull/1/files)
