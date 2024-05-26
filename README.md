@@ -174,7 +174,7 @@ Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link 
 ## Antilab #2
   - Boyko Dmytro
   - [Link to Boyko Dmytro project](https://github.com/BoykoDmytr/Boyko.University.FeP-1)
-  - [Link to Boyko Dmtro Pull Request](https://github.com/BoykoDmytr/Broslavskyi.University.Online-Gaming-Tournament-Platform/pull/1/files)
+  - [Link to Boyko Dmytro Pull Request](https://github.com/BoykoDmytr/Broslavskyi.University.Online-Gaming-Tournament-Platform/pull/1/files)
 
   - Ryzhanovskyi Mykhailo
   - [Link to Ryzhanovskyi Mykhailo project](https://github.com/muchailouzivert/Ryzhanovskyi.University.Tinder)
