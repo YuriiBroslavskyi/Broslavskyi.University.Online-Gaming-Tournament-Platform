@@ -169,3 +169,9 @@ Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link 
   - Prepare for platform launch.✅
   - Update documentation for final release.✅
   - Monitor platform post-launch for any issues and feedback.✅
+
+
+## Antilab #2
+  - Boyko Dmytro
+  - [Link to Boyko Dmytro project](https://github.com/BoykoDmytr/Boyko.University.FeP-1)
+  - [Link to Boyko Dmtro Pull Request](https://github.com/BoykoDmytr/Broslavskyi.University.Online-Gaming-Tournament-Platform/pull/1/files)
