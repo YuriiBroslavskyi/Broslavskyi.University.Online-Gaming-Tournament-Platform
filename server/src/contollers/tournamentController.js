@@ -40,20 +40,20 @@ exports.joinTournament = async (req, res) => {
         const { tournamentId } = req.params;
         const userId = req.user._id;
 
-        const user = await User.findById(userId);
+        let user = await User.findById(userId);
 
         if (user.isJoinedToTournament) {
             return res.status(400).json({ message: 'You are already joined to tournament' });
         }
 
-        await user.updateOne({
+        user = await User.findByIdAndUpdate(userId, {
             $set: {
                 isJoinedToTournament: true,
                 tournamentJoined: tournamentId
             }
-        }).exec();
+        }, { new: true });
 
-        res.json({ message: 'Successfully joined tournament' });
+        res.json({ message: 'Successfully joined tournament', user });
     } catch (error) {
         console.error('Error joining tournament:', error);
         res.status(500).json({ message: 'Internal server error' });

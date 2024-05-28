@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import TournamentComponent from '../components/TournamentExcerpt';
+import { userContext } from '../context/userContext';
 
 export const Home = () => {
     const [tournaments, setTournaments] = useState([]);
     const navigate = useNavigate();
+    const { setUser } = useContext(userContext)
 
     useEffect(() => {
         axios.get('http://localhost:3001/tournaments')
@@ -20,8 +22,9 @@ export const Home = () => {
 
     const handleJoinTournament = async (tournamentId) => {
         try {
-            await axios.post(`http://localhost:3001/tournaments/${tournamentId}/join`, {}, { withCredentials: true });
+            const res = await axios.post(`http://localhost:3001/tournaments/${tournamentId}/join`, {}, { withCredentials: true });
             console.log(`Joined tournament with ID: ${tournamentId}`);
+            setUser(res.data.user);
         } catch (error) {
             const { response } = error;
             toast.error(response.data.message);
@@ -45,7 +48,9 @@ export const Home = () => {
             const updatedUser = await axios.post(`http://localhost:3001/tournaments/unjoin`, {}, { withCredentials: true });
             console.log(`Unjoined tournament with ID: ${tournamentId}`);
 
+            setUser(updatedUser.data);
             const res = await axios.get('http://localhost:3001/tournaments');
+
             setTournaments(res.data);
         } catch (error) {
             const { response } = error;
