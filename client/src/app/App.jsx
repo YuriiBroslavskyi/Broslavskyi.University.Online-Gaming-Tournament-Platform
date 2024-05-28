@@ -35,7 +35,7 @@ function App() {
     return (
 
         <>
-            <userContext.Provider value={user}>
+            <userContext.Provider value={{ user, setUser }}>
                 <Header logout={logout} />
                 <main>
                     <Outlet />

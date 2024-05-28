@@ -1,4 +1,4 @@
-const {User} = require('../models/user');
+const { User } = require('../models/user');
 
 const joinLeague = async (req, res) => {
     try {
@@ -6,15 +6,15 @@ const joinLeague = async (req, res) => {
 
         const userId = req.user._id;
 
-        const user = await User.findById(userId);
+        let user = await User.findById(userId);
         if (!user) {
             return res.status(404).json({ success: false, message: 'User not found' });
         }
 
         user.league = league;
-        await user.save();
+        user = await user.save();
 
-        res.status(200).json({ success: true, message: `Joined ${league} league successfully!` });
+        res.status(200).json({ success: true, message: `Joined ${league} league successfully!`, user });
     } catch (error) {
         console.error('Error joining league:', error);
         res.status(500).json({ success: false, message: 'Internal server error' });

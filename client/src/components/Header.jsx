@@ -6,7 +6,7 @@ import { userContext } from '../context/userContext';
 import axios from 'axios';
 
 export const Header = ({ logout }) => {
-    const user = useContext(userContext);
+    const { user } = useContext(userContext);
 
     return (
         <header className='navbar'>

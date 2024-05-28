@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { userContext } from '../context/userContext';
 
 const TournamentComponent = ({ tournament, onJoinTournament, onEndTournament, onUnjoinTournament }) => {
-    const user = useContext(userContext);
+    const { user } = useContext(userContext);
 
     return (
         <div className="tournament">

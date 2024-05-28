@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { userContext } from '../context/userContext';
 
 export const LeagueJoining = () => {
     const [selectedLeague, setSelectedLeague] = useState('');
+
+    const { setUser } = useContext(userContext)
 
     const handleLeagueChange = (event) => {
         setSelectedLeague(event.target.value);
@@ -12,9 +15,10 @@ export const LeagueJoining = () => {
     const handleJoinLeague = async () => {
         try {
             // Join the league
-            await axios.post('http://localhost:3001/leagues/join', { league: selectedLeague }, { withCredentials: true });
+            const res = await axios.post('http://localhost:3001/leagues/join', { league: selectedLeague }, { withCredentials: true });
             console.log(`Joined ${selectedLeague} league successfully!`);
 
+            setUser(res.data.user);
             // Create the event
             await axios.post('http://localhost:3001/events/', {
                 eventType: 'league change',
