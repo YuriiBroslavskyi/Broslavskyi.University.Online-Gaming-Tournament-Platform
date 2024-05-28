@@ -33,9 +33,14 @@ export const Home = () => {
 
     const handleEndTournament = async (tournamentId) => {
         try {
-            await axios.post(`http://localhost:3001/tournaments/${tournamentId}/end`, {}, { withCredentials: true });
+            const tournamentResponse = await axios.post(`http://localhost:3001/tournaments/${tournamentId}/end`, {}, { withCredentials: true });
             console.log(`Ended tournament with ID: ${tournamentId}`);
 
+            const eventResponse = await axios.post('http://localhost:3001/events/', {
+                eventType: 'tournament ended',
+                eventName: tournamentResponse.data.tournament.name,
+
+            }, { withCredentials: true });
             navigate(`/tournaments/${tournamentId}/end`);
         } catch (error) {
             const { response } = error;

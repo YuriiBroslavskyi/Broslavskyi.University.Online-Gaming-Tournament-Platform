@@ -15,6 +15,9 @@ exports.createTournament = async (req, res) => {
     try {
         console.log(req.body);
         const { name, description, rules, startDate, endDate, prizePool } = req.body;
+        if (prizePool <= 0) {
+            return res.status(400).json({ message: 'Prize Pool must be greater than zero' })
+        }
 
         const newTournament = new Tournament({
             name,
@@ -77,7 +80,6 @@ exports.deleteTournament = async (req, res) => {
         }
         await Tournament.findByIdAndDelete(tournamentId);
 
-        // You may need to perform additional cleanup actions here
 
         res.json({ message: 'Tournament deleted successfully' });
     } catch (error) {
@@ -90,11 +92,11 @@ exports.endTournament = async (req, res) => {
     try {
         const { tournamentId } = req.params;
 
-        await Tournament.findByIdAndUpdate(tournamentId, {
+        const tournament = await Tournament.findByIdAndUpdate(tournamentId, {
             isActive: false,
-        });
+        }, { new: true });
 
-        res.json({ message: 'Tournament ended successfully' });
+        res.json({ message: 'Tournament ended successfully', tournament });
     } catch (error) {
         console.error('Error ending tournament:', error);
         res.status(500).json({ message: 'Internal server error' });

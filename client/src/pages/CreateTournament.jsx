@@ -11,7 +11,7 @@ export const CreateTournament = () => {
         endDate: '',
         prizePool: '',
     });
-    
+
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setTournamentData({ ...tournamentData, [name]: value });
@@ -24,15 +24,22 @@ export const CreateTournament = () => {
             const tournamentResponse = await axios.post('http://localhost:3001/tournaments/', tournamentData, { withCredentials: true });
             console.log('Tournament created:', tournamentResponse.data);
 
-            // Create the event
+
             const eventResponse = await axios.post('http://localhost:3001/events/', {
                 eventType: 'tournament creation',
-                eventName: tournamentResponse.data.name, // Use the name of the created tournament
-                // Add other event data as needed
+                eventName: tournamentResponse.data.name,
+
             }, { withCredentials: true });
             toast(`${tournamentResponse.data.name} has been created`);
         } catch (error) {
-            console.error('Error creating tournament:', error);
+            const { response } = error;
+            if (response.status == 400) {
+                toast(response.data.message);
+            } else {
+                console.error('Error creating tournament:', error);
+            }
+
+
         }
     };
     return (
