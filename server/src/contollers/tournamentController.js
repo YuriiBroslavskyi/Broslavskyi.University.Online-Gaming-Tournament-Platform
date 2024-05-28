@@ -91,17 +91,26 @@ exports.deleteTournament = async (req, res) => {
 exports.endTournament = async (req, res) => {
     try {
         const { tournamentId } = req.params;
+        const userId = req.user._id;
 
-        const tournament = await Tournament.findByIdAndUpdate(tournamentId, {
-            isActive: false,
-        }, { new: true });
+        // Check if the authenticated user is the creator of the tournament
+        const tournament = await Tournament.findById(tournamentId);
+        if (!tournament) {
+            return res.status(404).json({ message: 'Tournament not found' });
+        }
+        if (String(tournament.createdBy) !== String(userId)) {
+            return res.status(403).json({ message: 'You are not authorized to end this tournament' });
+        }
 
-        res.json({ message: 'Tournament ended successfully', tournament });
+        // If the user is the creator, end the tournament
+        const updatedTournament = await Tournament.findByIdAndUpdate(tournamentId, { isActive: false }, { new: true });
+        res.json({ message: 'Tournament ended successfully', tournament: updatedTournament });
     } catch (error) {
         console.error('Error ending tournament:', error);
         res.status(500).json({ message: 'Internal server error' });
     }
 };
+
 
 exports.getJoinedUsers = async (req, res) => {
     try {

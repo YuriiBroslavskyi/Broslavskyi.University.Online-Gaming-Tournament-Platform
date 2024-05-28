@@ -8,7 +8,7 @@ import { userContext } from '../context/userContext';
 export const Home = () => {
     const [tournaments, setTournaments] = useState([]);
     const navigate = useNavigate();
-    const { setUser } = useContext(userContext)
+    const { setUser } = useContext(userContext);
 
     useEffect(() => {
         axios.get('http://localhost:3001/tournaments')
@@ -36,13 +36,13 @@ export const Home = () => {
             const tournamentResponse = await axios.post(`http://localhost:3001/tournaments/${tournamentId}/end`, {}, { withCredentials: true });
             console.log(`Ended tournament with ID: ${tournamentId}`);
 
-            const eventResponse = await axios.post('http://localhost:3001/events/', {
+            await axios.post('http://localhost:3001/events/', {
                 eventType: 'tournament ended',
                 eventName: tournamentResponse.data.tournament.name,
-
             }, { withCredentials: true });
             navigate(`/tournaments/${tournamentId}/end`);
         } catch (error) {
+            toast.error('You can`t end a tournament because you are not its creator')
             const { response } = error;
             console.error(error);
         }
