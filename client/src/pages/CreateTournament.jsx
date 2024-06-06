@@ -53,10 +53,10 @@ export const CreateTournament = () => {
         }
 
         try {
-            const tournamentResponse = await axios.post('http://localhost:3001/tournaments/', tournamentData, { withCredentials: true });
+            const tournamentResponse = await axios.post(`${process.env.REACT_APP_SERVER_URL}/tournaments/`, tournamentData, { withCredentials: true });
             console.log('Tournament created:', tournamentResponse.data);
 
-            await axios.post('http://localhost:3001/events/', {
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/events/`, {
                 eventType: 'tournament creation',
                 eventName: tournamentResponse.data.name,
             }, { withCredentials: true });

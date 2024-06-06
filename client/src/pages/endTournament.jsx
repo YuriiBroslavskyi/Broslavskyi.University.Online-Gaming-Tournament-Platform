@@ -9,7 +9,7 @@ const EndTournament = () => {
 
     useEffect(() => {
         // Fetch tournament details
-        axios.get(`http://localhost:3001/tournaments/${tournamentId}`)
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/tournaments/${tournamentId}`)
             .then((res) => {
                 setTournament(res.data);
             })
@@ -18,7 +18,7 @@ const EndTournament = () => {
             });
 
         // Fetch list of joined users
-        axios.get(`http://localhost:3001/tournaments/${tournamentId}/joinedUsers`)
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/tournaments/${tournamentId}/joinedUsers`)
             .then((res) => {
                 setJoinedUsers(res.data);
             })

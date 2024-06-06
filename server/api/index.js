@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const cors = require('cors');
 const { sessionSecret, port, connectionString } = require('../config/config');
-const { authRouter } = require('./routes/auth');
-const tournamentRouter = require('./routes/tournament');
-const leagueJoiningRouter = require('./routes/league');
-const eventRouter = require('./routes/eventRouter');
-const feedbackRouter = require('./routes/feedback')
-const profile = require('./routes/profile')
+const { authRouter } = require('../routes/auth');
+const tournamentRouter = require('../routes/tournament');
+const leagueJoiningRouter = require('../routes/league');
+const eventRouter = require('../routes/eventRouter');
+const feedbackRouter = require('../routes/feedback');
+const profile = require('../routes/profile');
 
 const app = express();
 
@@ -49,3 +49,5 @@ const start = async () => {
 };
 
 start();
+
+module.exports = app;

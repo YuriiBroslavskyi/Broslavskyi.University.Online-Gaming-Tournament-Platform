@@ -15,7 +15,7 @@ export const Profile = () => {
         const formData = new FormData(form);
 
         try {
-            const updatedUser = await axios.put('http://localhost:3001/profile/', formData, {
+            const updatedUser = await axios.put(`${process.env.REACT_APP_SERVER_URL}/profile/`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

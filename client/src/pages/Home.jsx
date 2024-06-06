@@ -11,7 +11,7 @@ export const Home = () => {
     const { setUser } = useContext(userContext);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/tournaments')
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/tournaments`)
             .then((res) => {
                 setTournaments(res.data);
             })
@@ -22,7 +22,7 @@ export const Home = () => {
 
     const handleJoinTournament = async (tournamentId) => {
         try {
-            const res = await axios.post(`http://localhost:3001/tournaments/${tournamentId}/join`, {}, { withCredentials: true });
+            const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/tournaments/${tournamentId}/join`, {}, { withCredentials: true });
             console.log(`Joined tournament with ID: ${tournamentId}`);
             setUser(res.data.user);
         } catch (error) {
@@ -33,10 +33,10 @@ export const Home = () => {
 
     const handleEndTournament = async (tournamentId) => {
         try {
-            const tournamentResponse = await axios.post(`http://localhost:3001/tournaments/${tournamentId}/end`, {}, { withCredentials: true });
+            const tournamentResponse = await axios.post(`${process.env.REACT_APP_SERVER_URL}/tournaments/${tournamentId}/end`, {}, { withCredentials: true });
             console.log(`Ended tournament with ID: ${tournamentId}`);
 
-            await axios.post('http://localhost:3001/events/', {
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/events/`, {
                 eventType: 'tournament ended',
                 eventName: tournamentResponse.data.tournament.name,
             }, { withCredentials: true });
@@ -50,11 +50,11 @@ export const Home = () => {
 
     const handleUnjoinTournament = async (tournamentId) => {
         try {
-            const updatedUser = await axios.post(`http://localhost:3001/tournaments/unjoin`, {}, { withCredentials: true });
+            const updatedUser = await axios.post(`${process.env.REACT_APP_SERVER_URL}/tournaments/unjoin`, {}, { withCredentials: true });
             console.log(`Unjoined tournament with ID: ${tournamentId}`);
 
             setUser(updatedUser.data);
-            const res = await axios.get('http://localhost:3001/tournaments');
+            const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/tournaments`);
 
             setTournaments(res.data);
         } catch (error) {

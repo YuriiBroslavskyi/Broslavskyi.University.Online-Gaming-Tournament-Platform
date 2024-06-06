@@ -9,7 +9,7 @@ function App() {
 
     const logout = async () => {
         try {
-            await axios.get('http://localhost:3001/auth/logout', { withCredentials: true })
+            await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth/logout`, { withCredentials: true })
             setUser(null);
         } catch (error) {
             console.error(error);
@@ -19,7 +19,7 @@ function App() {
     useEffect(() => {
         if (user === null)
             axios
-                .get('http://localhost:3001/auth/account', {
+                .get(`${process.env.REACT_APP_SERVER_URL}/auth/account`, {
                     withCredentials: true,
                 })
                 .then((res) => {

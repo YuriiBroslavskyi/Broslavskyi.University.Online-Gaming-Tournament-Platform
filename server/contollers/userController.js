@@ -1,5 +1,5 @@
 const { Storage } = require('@google-cloud/storage');
-const { bucketName, projectId } = require('../../config/config');
+const { bucketName, projectId } = require('../config/config');
 const { User } = require('../models/user');
 
 const storage = new Storage({

@@ -1,4 +1,4 @@
-const { clientID, clientSecret } = require('../../config/config');
+const { clientID, clientSecret } = require('../config/config');
 const passport = require('passport');
 const { User } = require('../models/user');
 
@@ -10,7 +10,7 @@ passport.use(
         {
             clientID,
             clientSecret,
-            callbackURL: 'http://localhost:3001/auth/callback',
+            callbackURL: 'auth/callback',
             passReqToCallback: true,
         },
         async (req, accessToken, refreshToken, profile, done) => {

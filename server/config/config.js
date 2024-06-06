@@ -1,11 +1,14 @@
-const config = require('config');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = {
-    clientID: config.get('CLIENT_ID'),
-    clientSecret: config.get('CLIENT_SECRET'),
-    sessionSecret: config.get('SESSION_SECRET'),
-    port: config.get('PORT'),
-    connectionString: config.get('CONNECTION_STRING'),
-    projectId: config.get('PROJECT_ID'),
-    bucketName: config.get('BUCKET_NAME'),
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    sessionSecret: process.env.SESSION_SECRET,
+    port: process.env.PORT,
+    connectionString: process.env.CONNECTION_STRING,
+    projectId: process.env.PROJECT_ID,
+    bucketName: process.env.BUCKET_NAME,
+    clientUrl: process.env.CLIENT_URL,
 };
