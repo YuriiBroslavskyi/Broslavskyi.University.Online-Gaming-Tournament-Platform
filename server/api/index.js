@@ -11,6 +11,12 @@ const eventRouter = require('../routes/eventRouter');
 const feedbackRouter = require('../routes/feedback');
 const profile = require('../routes/profile');
 const app = express();
+const MongoStore = require('connect-mongo');
+
+mongoose.connect(
+    `${connectionString}`
+);
+const db = mongoose.connection;
 
 app.set('trust proxy', 1);
 
@@ -30,7 +36,11 @@ app.use(
             maxAge: 7 * 24 * 60 * 60 * 1000,
             sameSite: clientUrl.startsWith('https') ? 'none' : 'strict',
             secure: clientUrl.startsWith('https') ? true : false,
-        }
+        },
+        store: new MongoStore({
+            mongoUrl: db.client.s.url,
+        }),
+
     }
     )
 
@@ -50,10 +60,6 @@ app.use('/profile', profile);
 
 const start = async () => {
     try {
-        await mongoose.connect(connectionString, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
         app.listen(port, () => {
             console.log('Server is running on port', port);
         });
