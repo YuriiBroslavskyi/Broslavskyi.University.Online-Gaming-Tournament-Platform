@@ -3,26 +3,40 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const cors = require('cors');
-const { sessionSecret, port, connectionString } = require('../config/config');
+const { sessionSecret, port, connectionString, clientUrl } = require('../config/config');
 const { authRouter } = require('../routes/auth');
 const tournamentRouter = require('../routes/tournament');
 const leagueJoiningRouter = require('../routes/league');
 const eventRouter = require('../routes/eventRouter');
 const feedbackRouter = require('../routes/feedback');
 const profile = require('../routes/profile');
-
 const app = express();
+
+app.set('trust proxy', 1);
 
 app.use(
     cors({
-        origin: 'http://localhost:3000',
+        origin: true,
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true,
     })
 );
 app.use(
-    session({ secret: sessionSecret, saveUninitialized: false, resave: false })
+    session({
+        secret: sessionSecret,
+        saveUninitialized: false,
+        resave: false,
+        cookie: {
+            maxAge: 7 * 24 * 60 * 60 * 1000,
+            sameSite: clientUrl.startsWith('https') ? 'none' : 'strict',
+            secure: clientUrl.startsWith('https') ? true : false,
+        }
+    }
+    )
+
 );
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());

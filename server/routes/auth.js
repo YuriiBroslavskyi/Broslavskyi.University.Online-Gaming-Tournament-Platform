@@ -1,5 +1,6 @@
 require('../contollers/googleAuthController');
-const { clientUrl } = require('../config/config')
+const { clientUrl } = require('../config/config');
+
 const passport = require('passport');
 const { Router } = require('express');
 const { isLoggedIn } = require('../utils/utils');
