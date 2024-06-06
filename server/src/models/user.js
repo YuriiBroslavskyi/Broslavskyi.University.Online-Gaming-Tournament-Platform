@@ -14,6 +14,19 @@ const UserSchema = new Schema({
     tournamentJoined: { type: String, default: null }
 });
 
+UserSchema.statics.isDisplayNameUsed = async function (
+    currentUser,
+    displayName
+) {
+    const duplicates = await User.find({ displayName });
+    if (duplicates.length > 1) return true;
+    else if (duplicates.length === 1) {
+        return currentUser._id !== duplicates[0]._id;
+    }
+
+    return false;
+};
+
 UserSchema.statics.findOrCreate = async function (id, doc) {
     const user = await User.findById(id);
 

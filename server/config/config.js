@@ -6,4 +6,6 @@ module.exports = {
     sessionSecret: config.get('SESSION_SECRET'),
     port: config.get('PORT'),
     connectionString: config.get('CONNECTION_STRING'),
+    projectId: config.get('PROJECT_ID'),
+    bucketName: config.get('BUCKET_NAME'),
 };

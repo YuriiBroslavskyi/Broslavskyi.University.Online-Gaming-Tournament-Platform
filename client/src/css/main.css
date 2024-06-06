@@ -273,3 +273,60 @@ a {
 .tournament-card .end-button:hover {
   background-color: #bb2d3b;
 }
+
+.profile {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.profile__picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile__name {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.profile__email {
+  color: #007bff;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.profile__form {
+  margin-top: 20px;
+}
+
+.profile__input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile__button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.profile__button:hover {
+  background-color: #0056b3;
+}

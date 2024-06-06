@@ -9,6 +9,7 @@ const tournamentRouter = require('./routes/tournament');
 const leagueJoiningRouter = require('./routes/league');
 const eventRouter = require('./routes/eventRouter');
 const feedbackRouter = require('./routes/feedback')
+const profile = require('./routes/profile')
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use('/tournaments', tournamentRouter);
 app.use('/leagues', leagueJoiningRouter);
 app.use('/events', eventRouter);
 app.use('/feedbacks', feedbackRouter);
+app.use('/profile', profile);
 
 const start = async () => {
     try {
