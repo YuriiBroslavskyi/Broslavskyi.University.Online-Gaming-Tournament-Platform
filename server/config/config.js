@@ -11,4 +11,6 @@ module.exports = {
     projectId: process.env.PROJECT_ID,
     bucketName: process.env.BUCKET_NAME,
     clientUrl: process.env.CLIENT_URL,
+    private_key: process.env.PRIVATE_KEY,
+    client_email: process.env.SERVICE_ACCOUNT_EMAIL,
 };

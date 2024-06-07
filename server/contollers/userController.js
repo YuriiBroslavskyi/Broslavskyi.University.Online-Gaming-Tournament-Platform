@@ -4,7 +4,10 @@ const { User } = require('../models/user');
 
 const storage = new Storage({
     projectId,
-    keyFilename: 'onlinegamingtournamentplatform-fe0c607822bf.json',
+    credentials: {
+        private_key: process.env.PRIVATE_KEY,
+        client_email: process.env.SERVICE_ACCOUNT_EMAIL
+    },
 });
 
 const bucket = storage.bucket(bucketName);
