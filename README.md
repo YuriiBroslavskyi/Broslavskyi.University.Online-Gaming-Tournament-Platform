@@ -115,43 +115,43 @@ Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link 
   - Plan for next sprint based on project tasks decomposition.✅
 
 - ### Week 4:
-  - Implement feature: Profile Management for users.
-  - Fine-tune Azure deployment settings.
+  - Implement feature: Profile Management for users.✅
+  - Fine-tune Azure deployment settings.✅
   - Enhance unit test coverage for improved reliability.
   - Review and update project tasks decomposition.✅
   - Prepare for upcoming feature implementations.✅
 
 - ### Week 5:
   - Implement feature: Matchmaking algorithm.
-  - Optimize Azure deployment for scalability.
+  - Optimize Azure deployment for scalability.✅
   - Perform code review and address any issues.✅
   - Update documentation with latest changes.✅
   - Test matchmaking functionality thoroughly.
 
 - ### Week 6:
   - Implement feature: Live Chat integration.
-  - Monitor Azure deployment for performance.
+  - Monitor Azure deployment for performance.✅
   - Conduct load testing on live chat system.
   - Update documentation with live chat setup instructions.
   - Plan for upcoming feature enhancements.✅
   - 
 - ### Week 7:
-  - Implement feature: Leaderboards display.
-  - Fine-tune Azure security settings.
-  - Perform security audit on the platform.
-  - Update documentation with security measures.
-  - Test leaderboard functionality across different scenarios.
+  - Implement feature: Leaderboards display.✅
+  - Fine-tune Azure security settings.✅
+  - Perform security audit on the platform.✅
+  - Update documentation with security measures.✅
+  - Test leaderboard functionality across different scenarios.✅
 
 - ### Week 8:
   - Implement feature: Notification System.✅
-  - Monitor and optimize Azure costs.
+  - Monitor and optimize Azure costs.✅
   - Conduct user acceptance testing (UAT) on notification features.✅
   - Update documentation with notification setup guide.✅
   - Plan for further user engagement features.✅
 
 - ###  Week 10:
   - Implement feature: Prize Distribution management.✅
-  - Review and update Azure deployment architecture.
+  - Review and update Azure deployment architecture.✅
   - Perform regression testing on prize distribution functionality.✅
   - Update documentation with prize distribution instructions.✅
   - Plan for future platform enhancements.✅

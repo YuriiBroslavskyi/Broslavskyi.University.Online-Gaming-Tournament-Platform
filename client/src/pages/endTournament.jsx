@@ -8,7 +8,6 @@ const EndTournament = () => {
     const { tournamentId } = useParams();
 
     useEffect(() => {
-        // Fetch tournament details
         axios.get(`${process.env.REACT_APP_SERVER_URL}/tournaments/${tournamentId}`)
             .then((res) => {
                 setTournament(res.data);
@@ -17,7 +16,6 @@ const EndTournament = () => {
                 console.error('Error fetching tournament details:', error);
             });
 
-        // Fetch list of joined users
         axios.get(`${process.env.REACT_APP_SERVER_URL}/tournaments/${tournamentId}/joinedUsers`)
             .then((res) => {
                 setJoinedUsers(res.data);
@@ -32,10 +30,8 @@ const EndTournament = () => {
         const numParticipants = joinedUsers.length;
 
         if (numParticipants === 1) {
-            // If only one participant, they get the entire prize pool
             return [{ user: joinedUsers[0], prize: prizePool }];
         } else if (numParticipants === 2) {
-            // If two participants, first gets 70%, second gets 30%
             const firstPrize = prizePool * 0.7;
             const secondPrize = prizePool * 0.3;
             return [
@@ -43,7 +39,6 @@ const EndTournament = () => {
                 { user: joinedUsers[1], prize: Math.round(secondPrize) }
             ];
         } else {
-            // If more than two participants, randomly choose first, second, and third place
             const shuffledUsers = [...joinedUsers].sort(() => Math.random() - 0.5);
             const firstPrize = prizePool * 0.5;
             const secondPrize = prizePool * 0.3;

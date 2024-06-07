@@ -14,12 +14,10 @@ export const LeagueJoining = () => {
 
     const handleJoinLeague = async () => {
         try {
-            // Join the league
             const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/leagues/join`, { league: selectedLeague }, { withCredentials: true });
             console.log(`Joined ${selectedLeague} league successfully!`);
 
             setUser(res.data.user);
-            // Create the event
             await axios.post(`${process.env.REACT_APP_SERVER_URL}/events/`, {
                 eventType: 'league change',
                 leagueName: selectedLeague,

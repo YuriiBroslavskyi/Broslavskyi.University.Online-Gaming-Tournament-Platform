@@ -5,9 +5,7 @@ exports.createFeedback = async (req, res) => {
         const { name, description } = req.body;
         let { topic } = req.body;
 
-        // Logic to handle empty or invalid topic selection
         if (!topic || !['league-issue', 'tournament-issue', 'profile-issue', 'feedback-mechanism-issue', 'notification-issue'].includes(topic)) {
-            // Default to a generic topic or handle the case as appropriate
             topic = 'Other';
         }
 
