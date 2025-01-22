@@ -39,6 +39,10 @@ Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link 
 
 ## Project Architecture Documentation
 
+### **Snapgrid**
+
+![OGTPSnapGrid](https://github.com/user-attachments/assets/1f7d13df-2c51-4cb2-b71c-0877caedb9a9)
+
 **Folder Structure:**
 
 1. **Client:**
