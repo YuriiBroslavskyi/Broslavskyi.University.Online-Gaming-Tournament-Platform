@@ -42,7 +42,7 @@ Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link 
 
 ### **Snapgrid**
 
-![OGTPSnapGrid](https://github.com/user-attachments/assets/7eba1f30-90ff-4824-b3e6-cb391ca24b97)
+![OGTPSnapGrid](https://github.com/user-attachments/assets/fcac065d-e7fe-4855-92cb-095e7e9c0b97)
 
 **Folder Structure:**
 
