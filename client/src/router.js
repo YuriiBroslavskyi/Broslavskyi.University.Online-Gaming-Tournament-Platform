@@ -10,6 +10,7 @@ import { LatestEvents } from './pages/LatestEvents';
 import { CreateFeedback } from './pages/Feedback';
 import AboutPage from './pages/About';
 import EndTournament from './pages/endTournament';
+import LiveChat from './pages/LiveChat'; // ✅ Import ChatPage
 
 export const Router = () => {
     return (
@@ -25,6 +26,7 @@ export const Router = () => {
                     <Route path='feedback/' element={<CreateFeedback />} />
                     <Route path='about/' element={<AboutPage />} />
                     <Route path='tournaments/:tournamentId/end' element={<EndTournament />} />
+                    <Route path='tournaments/:tournamentId/chat' element={<LiveChat />} /> {/* ✅ New Chat Route */}
                 </Route>
             </Routes>
         </BrowserRouter>

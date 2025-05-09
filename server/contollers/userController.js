@@ -55,7 +55,7 @@ const handleProfilePictureUpdate = async (existingPicture, newFile, bucket) => {
 };
 
 const updateUser = async (req, res, next) => {
-    const { displayName, bio, phoneNumber } = req.body;
+    const { displayName } = req.body;
     const updateFields = {};
 
     addFieldIfTruthy(updateFields, 'displayName', displayName);
