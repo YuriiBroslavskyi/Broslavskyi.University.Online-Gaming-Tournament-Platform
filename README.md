@@ -37,7 +37,12 @@ The Online Gaming Tournament Platform is a web-based application designed to pro
 
 Follow [this](https://client-online-gaming-tournament-platform.vercel.app) link to view my website
 
+
 ## Project Architecture Documentation
+
+### **Snapgrid**
+
+![OGTPSnapGrid](https://github.com/user-attachments/assets/fcac065d-e7fe-4855-92cb-095e7e9c0b97)
 
 **Folder Structure:**
 
